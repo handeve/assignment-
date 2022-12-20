@@ -1,0 +1,93 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace AssignmentHanan
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+            string message = "Sorry Try Again Later";
+            Random rd = new Random();
+            int computer = rd.Next(0, 2);
+            if (computer == 1)
+            {
+                label5.Text = "Paper";
+                message = "It's a tie";
+            }
+            else if (computer == 0)
+            {
+                label5.Text = "Rock";
+                message = "You Won";
+            }
+            else if (computer == 3)
+            {
+                label5.Text = "Scissors";
+                message = "You Lost!!";
+            }
+
+            MessageBox.Show(message);
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            string message = "Sorry Try Again Later";
+            Random rd = new Random();
+            int computer = rd.Next(0, 2);
+            if (computer == 0)
+            {
+                label5.Text = "Rock";
+                message = "It's a tie";
+            }
+            else if(computer== 1)
+            {
+                label5.Text = "Paper";
+                message = "You Lost";
+            }
+            else if (computer == 2)
+            {
+                label5.Text = "Scissor";
+                message = "You Won!!";
+            }
+            
+            MessageBox.Show(message);
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            string message = "Sorry Try Again Later";
+            Random rd = new Random();
+            int computer = rd.Next(0, 2);
+            if (computer == 2)
+            {
+                label5.Text = "Scissor";
+                message = "It's a tie";
+            }
+            else if (computer == 0)
+            {
+                label5.Text = "Rock";
+                message = "You Won";
+            }
+            else if (computer == 1)
+            {
+                label5.Text = "Paper";
+                message = "You Lost!!";
+            }
+
+            MessageBox.Show(message);
+        }
+
+    }
+}
