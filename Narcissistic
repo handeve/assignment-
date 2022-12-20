@@ -1,0 +1,125 @@
+// C# program for checking
+// of Narcissistic number
+ using System;
+class narcissistic
+{
+    public static void Main()
+    {
+
+        int sum = 0;
+        int num = Convert.ToInt32(Console.ReadLine());
+        int temp = num;
+
+        int numberOfDigits = 0;
+
+        while (temp != 0)
+
+        {
+            numberOfDigits++;
+            temp /= 10;
+        }
+        temp = num;
+        while (num > 0)
+        {
+            int remainder = num % 10;
+            int power = (int)Math.Pow(remainder, numberOfDigits);
+            sum += power;
+            num /= 10;
+        }
+        if (sum == temp)
+        {
+            Console.WriteLine("Narcissictic Number");
+        }
+        else
+        {
+            Console.WriteLine("Not Narcissictic Number");
+        }
+
+
+    }
+
+
+    /* using System;  
+    namespace palindrome
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                string s, revs = "";
+                Console.WriteLine(" Enter string");
+                s = Console.ReadLine();
+                for (int i = s.Length - 1; i >= 0; i--) //String Reverse  
+                {
+                    revs += s[i].ToString();
+                }
+                if (revs == s) // Checking whether string is palindrome or not  
+                {
+                    Console.WriteLine("String is Palindrome  " );
+                }
+                else
+                {
+                    Console.WriteLine("String is not Palindrome"  );
+                }
+                Console.ReadKey();
+            }
+        }
+
+
+
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    namespace game 
+    {
+        class Program
+        {
+            static void Main(string[] args)
+            {
+                Console.WriteLine(" choose rock,paper or scissors");
+                string userChoice = Console.ReadLine();
+
+                Random r = new Random();
+                int computerChoice = r.Next(4);
+
+                if (computerChoice == 1)
+                {
+                    if (userChoice == "rock")
+                    {
+                        Console.WriteLine("The computer chose rock");
+                        Console.WriteLine("It is a tie ");
+                    }
+                    else if (userChoice == "paper")
+                    {
+                        Console.WriteLine("The computer chose paper");
+                        Console.WriteLine("It is a tie ");
+
+                    }
+                    else if (userChoice == "scissors")
+                    {
+                        Console.WriteLine("The computer chose scissors");
+                        Console.WriteLine("It is a tie ");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You must choose rock,paper or scissors!");
+
+                    }
+
+                }
+
+                else if (computerChoice == 2)
+                {
+                    if (userChoice == "rock")
+                    {
+                        Console.WriteLine("The computer chose paper");
+                        Console.WriteLine("Sorry you lose,paper beat rock");
+
+                    }
+                    else if (userChoice == "paper")
+                    {
+                        Console.WriteLine("The computer chose scissors");
+                        Console.WriteLine("Sorry you lose,scissors beat paper ");
